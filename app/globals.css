@@ -79,6 +79,7 @@
 .hero { position: relative; min-height: 620px; height: 100svh; max-height: 1050px; overflow: hidden; isolation: isolate; }
 .hero-art { position: absolute; inset: 0; z-index: -3; transform: scale(1.025); transition: transform 1.8s cubic-bezier(.2,.7,.3,1); }
 .hero-art img { object-position: 50% 55%; }
+.hero-video { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 55%; filter: saturate(.88) contrast(.98); }
 .hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgb(14 20 17 / 46%), rgb(16 22 18 / 5%) 75%), linear-gradient(180deg, rgb(13 18 16 / 35%) 0%, transparent 27%, transparent 60%, #171b17 100%); }
 .site-header { height: 106px; display: flex; align-items: center; justify-content: space-between; position: relative; border-bottom: 1px solid #eeeee313; }
 .wordmark { display: flex; gap: 10px; align-items: center; font-size: 14px; font-weight: 600; letter-spacing: -0.5px; }
@@ -253,7 +254,7 @@
   .mobile-nav a { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; font-size: 13px; border-bottom: 1px solid var(--border); }
   .mobile-nav a:last-child { border-bottom: 0; }
   .mobile-nav svg { width: 15px; height: 15px; }
-  .hero-art img { object-position: 67% 50%; }
+  .hero-art img, .hero-video { object-position: 67% 50%; }
   .hero-shade { background: linear-gradient(90deg, #10191255, #10191210), linear-gradient(0deg, #171b17 0%, #10191220 36%, #10191230 75%, #10191277); }
   .hero-content { padding-top: 110px; }
   .hero-eyebrow { font-size: 8px; gap: 8px; letter-spacing: .11em; margin-bottom: 27px; }
