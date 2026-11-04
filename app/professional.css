@@ -36,3 +36,19 @@
 .pro-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 .pro-contact-github{margin-top:22px;color:#b7a47f;font:8px var(--font-body),sans-serif;letter-spacing:.15em;display:inline-flex;gap:8px;align-items:center}
 @media(max-width:600px){.pro-form-row{grid-template-columns:1fr}.pro-contact-form{gap:14px}.pro-form-bottom{align-items:flex-start;flex-direction:column}}
+
+/* Contact form */
+.pro-contact-form{width:min(100%,680px);margin:34px auto 0;text-align:left;display:grid;gap:18px}
+.pro-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pro-contact-form label{display:grid;gap:8px;color:#c8c0ae;font:8px var(--font-body),sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.pro-contact-form input,.pro-contact-form textarea{width:100%;border:1px solid #d5c8a92b;background:#101415;color:#eee7d9;padding:14px 15px;border-radius:0;outline:none;font:13px/1.6 var(--font-body),sans-serif;letter-spacing:normal;text-transform:none;resize:vertical}
+.pro-contact-form input:focus,.pro-contact-form textarea:focus{border-color:#b59a69;box-shadow:0 0 0 2px #b59a6920}
+.pro-contact-form input::placeholder,.pro-contact-form textarea::placeholder{color:#777a74}
+.pro-form-bottom{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.pro-form-bottom button:disabled{opacity:.65;cursor:wait}
+.pro-form-feedback{display:flex;align-items:center;gap:7px;margin:0;font:11px/1.6 var(--font-body),sans-serif;color:#b9b5a9}
+.pro-form-success{color:#b8c6a7}.pro-form-error{color:#d69a8c}
+.pro-spin{animation:pro-spin 1s linear infinite}@keyframes pro-spin{to{transform:rotate(360deg)}}
+.pro-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.pro-contact-github{margin-top:22px;color:#b7a47f;font:8px var(--font-body),sans-serif;letter-spacing:.15em;display:inline-flex;gap:8px;align-items:center}
+@media(max-width:600px){.pro-form-row{grid-template-columns:1fr}.pro-contact-form{gap:14px}.pro-form-bottom{align-items:flex-start;flex-direction:column}}
