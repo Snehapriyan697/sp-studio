@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ArrowDown, ArrowUpRight, Asterisk, Menu, X } from 'lucide-react'
 import { useRef, useState } from 'react'
 import type { PointerEvent } from 'react'
@@ -30,9 +31,7 @@ export function Hero() {
   return (
     <section id="home" className="hero saga-hero" aria-labelledby="hero-heading" onPointerMove={moveLandscape} onPointerLeave={resetLandscape}>
       <div className="hero-art saga-art" ref={art}>
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/images/northern-shore.png" aria-hidden="true">
-          <source src="/video/hero.mp4" type="video/mp4" />
-        </video>
+        <Image src="/images/northern-shore.png" alt="" fill priority sizes="100vw" className="hero-image" aria-hidden="true" />
       </div>
       <div className="hero-shade saga-shade" />
       <header className="site-header page-width">
@@ -46,15 +45,15 @@ export function Hero() {
         </nav>}
       </header>
       <div className="hero-content page-width saga-hero-content">
-        <div className="eyebrow hero-eyebrow"><span className="status-dot" /> A story written by wind and water</div>
+        <div className="eyebrow hero-eyebrow"><span className="status-dot" /> A CINEMATIC FIELD JOURNAL</div>
         <h1 id="hero-heading">BEYOND<br /><em>THE HORIZON</em></h1>
         <p>Some journeys are not about conquest.<br className="desktop-break" /> They are about discovering who we truly are.</p>
         <a href="#north" className="text-link hero-link">Enter the north <ArrowDown size={15} aria-hidden="true" /></a>
       </div>
       <div className="hero-bottom page-width">
-        <a href="#intro" className="scroll-link"><span className="scroll-line" />Scroll to wander</a>
+        <a href="#north" className="scroll-link"><span className="scroll-line" />Scroll to wander</a>
         <span className="hero-note">A quieter world lies beyond the waves.</span>
-        <span className="landscape-label"><span className="tiny-cross">+</span> 63° NORTH · OPEN WATER</span>
+        <span className="landscape-label"><span className="tiny-cross">+</span> A NORTHERN FIELD JOURNAL</span>
       </div>
     </section>
   )
