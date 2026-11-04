@@ -1,11 +1,4 @@
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { ArrowDownRight, ArrowUpRight, Asterisk, Braces, Layers3, Sparkles } from 'lucide-react'
-
-const HeroScene = dynamic(() => import('@/components/portfolio/hero-scene'), {
-  ssr: false,
-  loading: () => <div className="pro-scene pro-scene-loading" aria-hidden="true"><div className="pro-scene-glow" /><div className="scene-fallback-orb" /></div>,
-})
 
 const explorations = [
   {
@@ -14,8 +7,8 @@ const explorations = [
     type: 'GAME SYSTEMS / INTERACTIVE WORLDS',
     description: 'A modular 2D action-game experiment exploring procedural weapon combinations, responsive combat, and replayable systems.',
     status: 'IN DEVELOPMENT',
-    image: '/images/little-world.png',
-    alt: 'A stylised miniature world representing an experimental game environment',
+    imageClass: 'pro-photo-game',
+    alt: 'A real gaming desk with a monitor and controller',
     tags: ['GODOT', 'GAME SYSTEMS', 'PROCEDURAL DESIGN'],
   },
   {
@@ -24,8 +17,8 @@ const explorations = [
     type: 'EDTECH / LEARNING EXPERIENCE',
     description: 'An idea for turning programming fundamentals into a world of quests, progression, and hands-on problem solving.',
     status: 'CONCEPT',
-    image: '/images/quiet-studio.png',
-    alt: 'A warm, considered creative workspace',
+    imageClass: 'pro-photo-code',
+    alt: 'A laptop on a modern developer workspace',
     tags: ['PYTHON', 'C++', 'INTERACTIVE LEARNING'],
   },
 ]
@@ -33,7 +26,7 @@ const explorations = [
 const capabilities = [
   { icon: Braces, index: '01', title: 'Web engineering', text: 'Responsive interfaces, thoughtful component systems, and fast experiences built with modern web technologies.' },
   { icon: Sparkles, index: '02', title: 'AI & automation', text: 'Practical experiments with AI tools, agents, and workflows that make complex tasks feel simpler.' },
-  { icon: Layers3, index: '03', title: 'Creative technology', text: 'Exploring motion, 3D, generative visuals, and the details that make digital products memorable.' },
+  { icon: Layers3, index: '03', title: 'Creative technology', text: 'Exploring visual storytelling, motion, and the details that make digital products memorable.' },
 ]
 
 export default function ProfessionalHome() {
@@ -62,7 +55,7 @@ export default function ProfessionalHome() {
           </div>
           <div className="pro-hero-meta"><span>BASED IN KERALA, INDIA</span><span>DESIGN-LED · CODE-DRIVEN</span></div>
         </div>
-        <HeroScene />
+        <div className="pro-hero-photo" role="img" aria-label="Mountain lake landscape at golden hour"><span>VISUAL NOTES / KERALA TO EVERYWHERE</span></div>
         <div className="pro-hero-side-note">DIGITAL CRAFT<br />WITH A HUMAN EDGE</div>
       </section>
 
@@ -81,7 +74,7 @@ export default function ProfessionalHome() {
           {explorations.map((item) => (
             <article className="pro-project" key={item.number}>
               <div className="pro-project-visual">
-                <Image src={item.image} alt={item.alt} fill sizes="(max-width: 760px) 100vw, 50vw" />
+                <div className={`pro-project-photo ${item.imageClass}`} role="img" aria-label={item.alt} />
                 <span className="pro-project-number">{item.number} / EXPLORATION</span>
                 <span className="pro-project-status">{item.status}</span>
                 <div className="pro-project-image-title">{item.name}</div>
@@ -117,13 +110,13 @@ export default function ProfessionalHome() {
 
       <section className="pro-about section-pad" id="about" aria-labelledby="about-title">
         <div className="pro-about-art">
-          <Image src="/images/northern-shore.png" alt="A quiet northern shoreline under a soft, atmospheric sky" fill sizes="(max-width: 760px) 100vw, 45vw" />
+          <div className="pro-about-photo" role="img" aria-label="A bright, minimal creative workspace" />
           <span>NOT JUST HOW IT LOOKS.<br />HOW IT WORKS.</span>
         </div>
         <div className="pro-about-copy">
           <span className="pro-section-index">04 / THE PERSON BEHIND THE PIXELS</span>
           <h2 id="about-title">Building with<br /><em>intention.</em></h2>
-          <p>I’m drawn to the process of turning an open-ended idea into something real. Sometimes that means shaping an interface; sometimes it means experimenting with an AI workflow, a game mechanic, or a small 3D world.</p>
+          <p>I’m drawn to the process of turning an open-ended idea into something real. Sometimes that means shaping an interface; sometimes it means experimenting with an AI workflow, a game mechanic, or a small interactive experience.</p>
           <p>I’m still learning, testing, and refining — and I think that’s part of the point. The best work usually starts with a better question.</p>
           <div className="pro-about-signoff"><span className="pro-signature">Snehapriyan</span><span>DESIGN · DEVELOPMENT · EXPERIMENTATION</span></div>
         </div>
