@@ -1,6 +1,5 @@
 import { createHash } from 'node:crypto'
 import { NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 
 export const runtime = 'nodejs'
 const reply = (message: string, status: number) => NextResponse.json({ message }, { status, headers: { 'Cache-Control': 'no-store' } })
@@ -24,19 +23,35 @@ export async function POST(request: Request) {
   const url = process.env.SUPABASE_URL
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY
   if (!url || !key) return reply('Contact service is not configured yet.', 503)
-  const supabase = createClient(url, key, { auth: { autoRefreshToken: false, persistSession: false } })
+  const supabaseHeaders = { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' }
   const ip = (request.headers.get('x-vercel-forwarded-for') || request.headers.get('x-forwarded-for') || 'unknown').split(',')[0].trim()
   const ipHash = createHash('sha256').update(ip).digest('hex')
-  const { data: allowed, error: limitError } = await supabase.rpc('check_contact_rate_limit', { ip_hash: ipHash, max_requests: 4, window_seconds: 3600 })
-  if (limitError) {
-    console.error('Contact rate-limit check failed:', limitError.message)
+  let limitResponse: Response
+  try {
+    limitResponse = await fetch(`${url}/rest/v1/rpc/check_contact_rate_limit`, {
+      method: 'POST', headers: supabaseHeaders,
+      body: JSON.stringify({ ip_hash: ipHash, max_requests: 4, window_seconds: 3600 }),
+      signal: AbortSignal.timeout(8000),
+    })
+  } catch { return reply('Contact service is temporarily unavailable.', 503) }
+  if (!limitResponse.ok) {
+    console.error('Contact rate-limit check failed:', limitResponse.status)
     return reply('Contact service is temporarily unavailable.', 503)
   }
-  if (!allowed) return reply('Too many messages. Please try again in an hour.', 429)
+  if (!await limitResponse.json()) return reply('Too many messages. Please try again in an hour.', 429)
 
-  const { data: saved, error } = await supabase.from('contact_messages').insert({ name, email, message }).select('id').single()
-  if (error || !saved) {
-    console.error('Contact message save failed:', error?.message)
+  let saveResponse: Response
+  try {
+    saveResponse = await fetch(`${url}/rest/v1/contact_messages`, {
+      method: 'POST', headers: { ...supabaseHeaders, Prefer: 'return=representation' },
+      body: JSON.stringify({ name, email, message }),
+      signal: AbortSignal.timeout(8000),
+    })
+  } catch { return reply('Your message could not be saved. Please try again later.', 503) }
+  const savedRows = saveResponse.ok ? await saveResponse.json() : []
+  const saved = Array.isArray(savedRows) ? savedRows[0] : null
+  if (!saveResponse.ok || !saved?.id) {
+    console.error('Contact message save failed:', saveResponse.status)
     return reply('Your message could not be saved. Please try again later.', 503)
   }
 
