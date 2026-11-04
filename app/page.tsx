@@ -1,5 +1,5 @@
-import NordicExperience from '@/components/portfolio/nordic-experience'
+import ProfessionalHome from '@/components/portfolio/professional-home'
 
 export default function Home() {
-  return <NordicExperience />
+  return <ProfessionalHome />
 }
