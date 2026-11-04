@@ -1,20 +1,21 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, Manrope } from 'next/font/google'
+import { Cinzel, Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
 
 const display = Cormorant_Garamond({ subsets: ['latin'], weight: ['400', '500', '600'], style: ['normal', 'italic'], variable: '--font-display', display: 'swap' })
-const sans = Manrope({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
+const heading = Cinzel({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-heading', display: 'swap' })
+const sans = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000'),
-  title: 'Snehapriyan — AI Developer & Web Designer',
-  description: 'I build things with AI, code, and curiosity. A personal corner of the internet for thoughtful digital experiences, experiments, and useful little systems.',
+  title: 'Beyond the Horizon — A Journey North',
+  description: 'An atmospheric journey through northern landscapes, quiet philosophy, and the horizon beyond.',
   applicationName: 'SP-WEBSITE',
   authors: [{ name: 'Snehapriyan' }],
   openGraph: {
-    title: 'Snehapriyan — AI, code, and curiosity.',
-    description: 'Thoughtful digital experiences, experiments, and useful little systems. Enter a small digital world.',
+    title: 'Beyond the Horizon — A Journey North',
+    description: 'Some journeys are not about conquest. They are about discovering who we truly are.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Snehapriyan',
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#171b17',
+  themeColor: '#101112',
 }
 
 export default function RootLayout({
@@ -35,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable}`}>
+    <html lang="en" className={`${display.variable} ${heading.variable} ${sans.variable}`}>
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
