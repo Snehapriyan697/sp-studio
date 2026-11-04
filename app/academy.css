@@ -3,3 +3,15 @@
 @media(max-width:900px){.cb-topbar,.cb-hero,.cb-paths,.cb-journey,.cb-codex,.cb-footer{width:calc(100% - 52px)}.cb-hero-copy{width:62%}.cb-hero-art{right:-10%;width:60%;opacity:.8}.cb-game-layout{grid-template-columns:290px 1fr}.cb-quest-detail{padding:20px}.cb-codex{gap:5%}}
 @media(max-width:680px){.cb-topbar{height:72px}.cb-nav{display:none}.cb-player{font-size:7px}.cb-hero{min-height:760px;align-items:flex-start}.cb-hero-copy{width:100%;padding:90px 0 130px}.cb-hero h1{font-size:clamp(54px,12vw,76px)}.cb-hero-copy>p{font-size:16px;max-width:420px}.cb-hero-art{top:auto;bottom:20px;right:-22%;width:105%;height:48%;opacity:.65}.cb-hero-art:before{background:linear-gradient(180deg,#0d1013 0%,transparent 35%,#0d1013 100%)}.cb-hero-stats{gap:24px;margin-top:45px}.cb-hero-stats strong{font-size:19px}.cb-hero-stats span{font-size:6px}.cb-scroll{display:none}.cb-paths,.cb-journey{padding:78px 0}.cb-section-heading{display:block}.cb-section-heading h2{font-size:49px}.cb-section-heading>p{margin-top:18px;font-size:14px}.cb-path-grid{grid-template-columns:1fr}.cb-path-card{min-height:330px;padding:24px}.cb-game-layout{grid-template-columns:1fr}.cb-quest-list{padding:15px 0}.cb-quest-item{padding:13px 18px}.cb-quest-detail{padding:17px}.cb-detail-title h3{font-size:28px}.cb-answer-grid{grid-template-columns:1fr}.cb-claim-row{align-items:flex-start;flex-direction:column}.cb-claim{width:100%;justify-content:center}.cb-codex{grid-template-columns:1fr;margin:0 auto 65px;padding-top:55px}.cb-codex-art{height:270px}.cb-codex-copy h2{font-size:47px}.cb-footer{padding:24px 0;flex-wrap:wrap}.cb-footer>span{order:3;width:100%}.cb-footer>small{margin-left:auto}.cb-footer>a:not(.cb-logo){font-size:6px}}
 @media(prefers-reduced-motion:reduce){.cb-shell *{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Structured curriculum levels */
+.cb-tier-label{padding:15px 20px 8px;color:#c4a36b;font:7px var(--font-body);letter-spacing:.17em;border-top:1px solid #e6e1d512}
+.cb-quest-wrap:first-of-type .cb-tier-label{border-top:0}
+.cb-quest-item{position:relative}
+.cb-quest-item:not(:disabled):hover{background:#c4a36b0a}
+.cb-path-meta{letter-spacing:.13em}
+.cb-path-card .cb-path-meta{color:#a4aaa1}
+.cb-hero-stats strong{font-variant-numeric:tabular-nums}
+.cb-quest-list{position:sticky;top:18px}
+@media(max-width:680px){.cb-quest-list{position:static}.cb-tier-label{padding-left:18px}}
