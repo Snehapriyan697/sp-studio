@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowDownRight, ArrowRight, Compass, Waves, Mountain, Wind, ArrowUpRight } from 'lucide-react'
+import { ArrowDownRight, Compass, Waves, Mountain, ArrowUpRight } from 'lucide-react'
 
 const chapters = [
   { number:'01', title:'The departure', text:'Leave the familiar shore. Let the open water redraw the map.', tag:'THE FIRST STEP' },
