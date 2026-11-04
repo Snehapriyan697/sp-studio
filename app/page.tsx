@@ -1,5 +1,6 @@
-import ProfessionalHome from '@/components/portfolio/professional-home'
+import AcademyHome from '@/components/academy/academy-home'
+import './academy.css'
 
 export default function Home() {
-  return <ProfessionalHome />
+  return <AcademyHome />
 }
