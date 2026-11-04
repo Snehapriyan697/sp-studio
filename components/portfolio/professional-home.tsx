@@ -1,5 +1,6 @@
 import { ArrowDownRight, ArrowUpRight, Asterisk, Braces, Layers3, Sparkles } from 'lucide-react'
 import ContactForm from './contact-form'
+import ContactForm from './contact-form'
 
 const explorations = [
   {
