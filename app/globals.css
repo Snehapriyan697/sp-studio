@@ -413,3 +413,31 @@
 @media(prefers-reduced-motion:reduce) {
  .saga-art { transform:none!important; }
 }
+
+/* Final editorial polish */
+.hero-image { object-fit:cover; object-position:50% 54%; filter:saturate(.62) brightness(.78) contrast(1.08); }
+.saga-art { transform:scale(1.035); }
+.saga-shade { background:linear-gradient(90deg,rgba(8,10,12,.72),rgba(8,10,12,.12) 78%),linear-gradient(180deg,rgba(8,10,12,.42),transparent 28%,rgba(8,10,12,.08) 58%,#101112 100%); }
+.site-header { border-bottom-color:#d5c8a91c; }
+.saga-hero .desktop-nav a { position:relative; }
+.saga-hero .desktop-nav a:after { content:''; position:absolute; left:0; right:100%; bottom:4px; height:1px; background:#a58a58; transition:right .3s ease; }
+.saga-hero .desktop-nav a:hover:after { right:0; }
+.intro-section { border-bottom-color:#d5c8a91c; }
+.intro-copy h2 { max-width:700px; }
+.north-card,.journey-stop,.project-feature { min-width:0; }
+.north-caption p { max-width:310px; }
+.journey-marker { display:grid; place-items:center; font-size:6px; color:#d5c8a9; }
+.journey-stop:not(:first-child) .journey-marker { display:grid; }
+.philosophy-inner blockquote { max-width:1000px; }
+.contact-section::after { background:linear-gradient(90deg,#101112ed,#10111280),linear-gradient(0deg,#101112,transparent 55%); }
+.footer { border-top-color:#d5c8a91c; }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+ .north-image img { will-change:transform; }
+ .journey-stop { transition:transform .35s ease; }
+ .journey-stop:hover { transform:translateY(-5px); }
+}
+@media (max-width:700px) {
+ .hero-image { object-position:62% 50%; }
+ .saga-hero .hero-bottom { align-items:end; }
+ .saga-hero .landscape-label { max-width:140px; text-align:right; line-height:1.7; }
+}
