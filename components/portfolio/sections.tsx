@@ -9,8 +9,8 @@ export function SectionLabel({ number, children }: { number: string; children: R
 export function Introduction() {
   return (
     <section id="intro" className="intro-section page-width" aria-labelledby="intro-heading">
-      <div className="intro-note"><Asterisk aria-hidden="true" /><span>A developer&apos;s mind.<br />A maker&apos;s curiosity.</span></div>
-      <div className="intro-copy"><h2 id="intro-heading">Good things begin with<br />a little <em>“what if?”</em></h2><p>I&apos;m Snehapriyan. I work at the intersection of AI, design, and the web—following ideas and seeing where they lead.</p><a href="#about" className="text-link">A little more about me <ArrowUpRight size={15} aria-hidden="true" /></a></div>
+      <div className="intro-note"><Asterisk aria-hidden="true" /><span>A visual story.<br />A quieter perspective.</span></div>
+      <div className="intro-copy"><h2 id="intro-heading">A world beyond<br />the <em>ordinary.</em></h2><p>A visual journey shaped by northern landscapes, quiet moments, and the belief that the most meaningful journeys change the person who takes them.</p><a href="#about" className="text-link">Discover the journey <ArrowUpRight size={15} aria-hidden="true" /></a></div>
       <span className="intro-index" aria-hidden="true">( Hello, world. )</span>
     </section>
   )
@@ -19,7 +19,7 @@ export function Introduction() {
 export function SelectedWork() {
   return (
     <section id="work" className="section-shell page-width" aria-labelledby="work-heading">
-      <SectionLabel number="01">Ideas, made tangible</SectionLabel>
+      <SectionLabel number="02">The workbench</SectionLabel>
       <div className="section-heading"><h2 id="work-heading">Selected <em>work.</em></h2><p>A few things from the workbench.<br />Thoughtfully built. Always evolving.</p></div>
       {projects.length > 0 ? <div className="project-list">{projects.map((project, index) => (
         <a className="project-feature" href={project.url} target="_blank" rel="noopener noreferrer" key={project.name}>
@@ -63,7 +63,7 @@ export function Journey() {
   ]
   return (
     <section id="journey" className="journey-section page-width">
-      <SectionLabel number="02">The journey</SectionLabel>
+      <SectionLabel number="03">The journey</SectionLabel>
       <div className="section-heading"><h2>Not all who wander<br />seek <em>to conquer.</em></h2><p>A passage in four quiet chapters.<br />Move through it at your own pace.</p></div>
       <div className="journey-track">{chapters.map((chapter, index) => <article className="journey-stop" key={chapter.time}>
         <span className="journey-marker">{String(index + 1).padStart(2, '0')}</span><span className="journey-time">{chapter.time}</span><h3>{chapter.title}</h3><p>{chapter.text}</p>
@@ -76,7 +76,7 @@ export function Philosophy() {
   return (
     <section id="philosophy" className="philosophy-section">
       <div className="philosophy-grain" />
-      <div className="page-width philosophy-inner"><SectionLabel number="03">The philosophy</SectionLabel>
+      <div className="page-width philosophy-inner"><SectionLabel number="04">The philosophy</SectionLabel>
         <span className="quote-mark" aria-hidden="true">“</span>
         <blockquote>I have no enemies.<br /><em>The hardest battle is the one within.</em></blockquote>
         <p>PEACE · FREEDOM · PURPOSE · HUMANITY</p>
@@ -89,7 +89,7 @@ export function Philosophy() {
 export function About() {
   return (
     <section id="about" className="about-section section-shell page-width" aria-labelledby="about-heading">
-      <SectionLabel number="04">The person behind the pixels</SectionLabel>
+      <SectionLabel number="05">The person behind the pixels</SectionLabel>
       <div className="about-grid">
         <div className="about-art"><Image src="/images/northern-shore.png" alt="Warm light over a quiet rocky coastline" fill sizes="(max-width: 700px) 100vw, 40vw" /><div className="about-art-caption"><Asterisk size={22} aria-hidden="true" /><span>Room to think.<br />Space to build.</span></div></div>
         <div className="about-copy"><h2 id="about-heading">A little <em>about me.</em></h2><p>I&apos;m Snehapriyan, an AI developer and web designer interested in the space where software, design, and emerging technology meet.</p><p>I enjoy taking an idea, breaking it apart, experimenting with different approaches, and turning it into something people can actually interact with.</p><div className="beyond"><h3><Plus size={13} aria-hidden="true" /> Beyond the browser.</h3><p>Usually curious about something—AI, games, 3D, motorcycles, or a new thing to learn. Not everything needs to become a project.</p></div></div>
@@ -110,9 +110,9 @@ export function Contact() {
     <>
       <section id="contact" className="contact-section" aria-labelledby="contact-heading">
         <div className="contact-landscape" aria-hidden="true"><Image src="/images/northern-shore.png" alt="" fill sizes="100vw" /></div>
-        <div className="page-width contact-content"><SectionLabel number="05">An open invitation</SectionLabel><h2 id="contact-heading">Let&apos;s make<br />something <em>interesting.</em></h2><p>Have an idea, experiment, or simply want to talk<br className="desktop-break" /> about something you&apos;re building?</p><div className="contact-links">{links.map(({ label, href, Icon }) => href ? <a key={label} href={href} target={label !== 'Email' ? '_blank' : undefined} rel={label !== 'Email' ? 'noopener noreferrer' : undefined}><Icon size={15} aria-hidden="true" />{label}<ArrowUpRight size={15} aria-hidden="true" /></a> : <span key={label} className="contact-placeholder"><Icon size={15} aria-hidden="true" />{label}<span>{label === 'Email' ? 'Add email' : 'Add link'}</span></span>)}</div></div>
+        <div className="page-width contact-content"><SectionLabel number="06">An open invitation</SectionLabel><h2 id="contact-heading">Let&apos;s make<br />something <em>interesting.</em></h2><p>Have an idea, experiment, or simply want to talk<br className="desktop-break" /> about something you&apos;re building?</p><div className="contact-links">{links.map(({ label, href, Icon }) => href ? <a key={label} href={href} target={label !== 'Email' ? '_blank' : undefined} rel={label !== 'Email' ? 'noopener noreferrer' : undefined}><Icon size={15} aria-hidden="true" />{label}<ArrowUpRight size={15} aria-hidden="true" /></a> : <span key={label} className="contact-placeholder"><Icon size={15} aria-hidden="true" />{label}<span>{label === 'Email' ? 'Add email' : 'Add link'}</span></span>)}</div></div>
       </section>
-      <footer className="footer page-width"><a href="#home" className="footer-brand">Snehapriyan<span>.</span><span className="footer-role">AI developer / Web designer</span></a><span className="footer-note">Built with curiosity.</span><div className="footer-end"><span>© 2026</span><a href="#home" aria-label="Back to top"><ArrowUpRight size={17} aria-hidden="true" /></a></div></footer>
+      <footer className="footer page-width"><a href="#home" className="footer-brand">Snehapriyan<span>.</span><span className="footer-role">AI developer / Web designer</span></a><span className="footer-note">A journey by Snehapriyan.</span><div className="footer-end"><span>© 2026</span><a href="#home" aria-label="Back to top"><ArrowUpRight size={17} aria-hidden="true" /></a></div></footer>
     </>
   )
 }
