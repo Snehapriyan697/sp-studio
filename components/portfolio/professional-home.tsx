@@ -1,4 +1,5 @@
 import { ArrowDownRight, ArrowUpRight, Asterisk, Braces, Layers3, Sparkles } from 'lucide-react'
+import ContactForm from './contact-form'
 
 const explorations = [
   {
@@ -127,7 +128,8 @@ export default function ProfessionalHome() {
         <span className="pro-section-index">05 / HAVE SOMETHING IN MIND?</span>
         <h2 id="contact-title">Let’s make<br /><em>something matter.</em></h2>
         <p>Have an interesting idea, a project to explore, or just want to talk about creative technology?</p>
-        <a className="pro-button pro-button-primary" href="https://github.com/Snehapriyan697" target="_blank" rel="noopener noreferrer">FIND ME ON GITHUB <ArrowUpRight size={16} /></a>
+        <ContactForm />
+        <a className="pro-contact-github" href="https://github.com/Snehapriyan697" target="_blank" rel="noopener noreferrer">OR FIND ME ON GITHUB <ArrowUpRight size={14} /></a>
       </section>
 
       <footer className="pro-footer">
