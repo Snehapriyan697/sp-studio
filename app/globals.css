@@ -32,14 +32,14 @@
 
 :root {
   color-scheme: dark;
-  --background: #171b17;
-  --foreground: #edece3;
-  --card: #20261f;
-  --secondary: #252b23;
-  --muted-foreground: #a3a69a;
-  --primary: #c7b58e;
-  --border: #ffffff1c;
-  --forest: #9da986;
+  --background: #101112;
+  --foreground: #e9e4d8;
+  --card: #191b1d;
+  --secondary: #222528;
+  --muted-foreground: #a6a49b;
+  --primary: #a58a58;
+  --border: #ffffff1a;
+  --forest: #8f9a86;
 }
 
 @layer base {
@@ -51,9 +51,9 @@
   a { text-decoration: none; }
   button, a { outline-offset: 6px; }
   :focus-visible { outline: 1px solid var(--primary); }
-  ::selection { background: #c7b58e; color: #171b17; }
+  ::selection { background: #c7b58e; color: #101112; }
   h1, h2, h3, p { margin: 0; }
-  h1, h2 { font-family: var(--font-display), Georgia, serif; font-weight: 400; letter-spacing: -0.035em; }
+  h1, h2 { font-family: var(--font-heading), Georgia, serif; font-weight: 400; letter-spacing: -0.035em; }
   h2 { font-size: clamp(44px, 4.8vw, 64px); line-height: 1.08; }
   h1 em, h2 em { color: var(--primary); font-weight: 400; }
   p { color: var(--muted-foreground); line-height: 1.9; }
@@ -201,7 +201,7 @@
 .tool-categories p { color: #c6cbbd; font-size: 10px; }
 .site-stack { font-size: 9px; margin-top: 25px; color: #a0a594; }
 
-.contact-section { position: relative; isolation: isolate; overflow: hidden; padding-block: 90px 93px; background: #1d241d; }
+.contact-section { position: relative; isolation: isolate; overflow: hidden; padding-block: 90px 93px; background: #191b1d; }
 .contact-landscape { position: absolute; inset: 0; z-index: -2; }
 .contact-landscape img { object-fit: cover; object-position: 40% 45%; opacity: .15; filter: saturate(.3); }
 .contact-section::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #1b221cea, #1b221c30), linear-gradient(0deg, #171b17, transparent 50%); }
@@ -332,4 +332,84 @@
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
   .hero-art { transform: none !important; }
+}
+
+/* BEYOND THE HORIZON — northern editorial direction */
+.saga-hero { background: #101112; }
+.saga-art { transform: scale(1.04); }
+.saga-art video { filter: saturate(.58) brightness(.8) contrast(1.08); }
+.saga-shade { background: linear-gradient(90deg,rgba(9,12,14,.78),rgba(9,12,14,.12) 75%),linear-gradient(180deg,rgba(8,10,12,.46),transparent 30%,rgba(8,10,12,.1) 57%,#101112 100%); }
+.saga-hero-content { padding-top: clamp(105px,16vh,165px); }
+.saga-hero h1 { font-family: var(--font-heading),Georgia,serif; font-size:clamp(54px,8.1vw,116px); line-height:.99; letter-spacing:.015em; font-weight:400; text-shadow:0 5px 32px #0007; }
+.saga-hero h1 em { color:#d5c8a9; font-style:normal; }
+.saga-hero-content>p { max-width:460px; font-family:var(--font-display),Georgia,serif; font-size:clamp(17px,1.65vw,21px); line-height:1.55; color:#e0d9c9; }
+.saga-hero .hero-eyebrow { letter-spacing:.22em; }
+.saga-hero .hero-link { border-color:#a58a5866; text-transform:uppercase; letter-spacing:.12em; font-size:9px; }
+.saga-hero .wordmark { letter-spacing:.16em; font-family:var(--font-heading),serif; font-size:12px; }
+.saga-hero .wordmark>svg { color:#a58a58; }
+.saga-hero .desktop-nav { gap:30px; }
+.saga-hero .desktop-nav a { letter-spacing:.16em; font-size:8px; }
+.saga-hero .hero-note { font-size:16px; color:#d5c8a9; }
+.north-section { background:#151719; padding:88px 0 100px; overflow:hidden; }
+.north-intro { text-align:center; }
+.north-intro .section-label { justify-content:center; }
+.north-intro h2 { margin-top:28px; font-size:clamp(45px,6vw,76px); }
+.north-intro>p { max-width:520px; margin:20px auto 0; font-size:13px; }
+.north-grid { display:grid; grid-template-columns:1fr 1.12fr 1fr; gap:18px; align-items:center; margin-top:57px; }
+.north-card-1,.north-card-3 { transform:translateY(28px); }
+.north-image { position:relative; overflow:hidden; aspect-ratio:.82; background:#202427; }
+.north-card-2 .north-image { aspect-ratio:.76; }
+.north-image img { object-fit:cover; filter:brightness(.78) saturate(.7); transition:transform 1.1s cubic-bezier(.2,.7,.3,1),filter .6s; }
+.north-card:hover .north-image img { transform:scale(1.045); filter:brightness(.95) saturate(.85); }
+.north-index { position:absolute; top:18px; left:19px; color:#e0d6c1; font-family:var(--font-heading),serif; font-size:10px; letter-spacing:.15em; }
+.north-caption { padding:18px 2px 0; }
+.north-caption h3 { font-family:var(--font-display),serif; font-size:25px; font-weight:400; color:#e5dfd1; }
+.north-caption p { font-size:10px; margin-top:5px; }
+.journey-section { padding-block:110px 120px; }
+.journey-track { display:grid; grid-template-columns:repeat(4,1fr); margin-top:66px; border-top:1px solid #a58a584b; }
+.journey-stop { position:relative; padding:35px 28px 0 0; }
+.journey-stop:not(:first-child) { padding-left:25px; border-left:1px solid var(--border); }
+.journey-marker { position:absolute; top:-7px; left:0; width:13px; height:13px; border:1px solid #a58a58; background:#101112; border-radius:50%; color:transparent; }
+.journey-stop:not(:first-child) .journey-marker { left:25px; }
+.journey-time { color:#a58a58; font-size:8px; letter-spacing:.16em; }
+.journey-stop h3 { font-family:var(--font-display),serif; font-size:27px; font-weight:400; margin-top:23px; color:#e7dfd0; }
+.journey-stop p { font-size:11px; line-height:1.9; margin-top:11px; max-width:225px; }
+.philosophy-section { position:relative; overflow:hidden; isolation:isolate; padding:105px 0 112px; background:linear-gradient(120deg,#17191a,#101112 70%); }
+.philosophy-section:before,.philosophy-section:after { content:''; position:absolute; z-index:-1; width:45vw; height:45vw; border:1px solid #a58a5818; border-radius:50%; }
+.philosophy-section:before { right:-12vw; top:-22vw; box-shadow:0 0 0 55px #a58a5808,0 0 0 110px #a58a5805; }
+.philosophy-section:after { left:-23vw; bottom:-35vw; }
+.philosophy-inner { text-align:center; }
+.philosophy-inner .section-label { justify-content:center; }
+.quote-mark { display:block; color:#a58a58; font-family:var(--font-display),serif; font-size:100px; line-height:.8; margin-top:58px; opacity:.75; }
+.philosophy-inner blockquote { font-family:var(--font-display),serif; font-size:clamp(31px,5.2vw,68px); line-height:1.2; color:#e9e2d4; font-weight:400; margin:20px auto 0; }
+.philosophy-inner blockquote em { color:#c1a878; font-weight:400; }
+.philosophy-inner>p { margin-top:38px; font-size:8px; letter-spacing:.24em; color:#a58a58; }
+.philosophy-footnote { display:block; margin-top:25px; color:#888982; font-family:var(--font-display),serif; font-style:italic; font-size:15px; }
+@media(max-width:700px) {
+ .saga-hero { min-height:740px; }
+ .saga-hero-content { padding-top:125px; }
+ .saga-hero h1 { font-size:clamp(47px,11vw,69px); letter-spacing:0; }
+ .saga-hero-content>p { max-width:310px; font-size:17px; }
+ .saga-shade { background:linear-gradient(90deg,#090c0ecc,#090c0e30),linear-gradient(0deg,#101112 0%,#10111222 50%,#090c0e77); }
+ .north-section { padding:63px 0 70px; }
+ .north-intro h2 { font-size:45px; }
+ .north-intro>p { max-width:300px; font-size:11px; }
+ .north-grid { grid-template-columns:1fr; gap:33px; margin-top:35px; }
+ .north-card-1,.north-card-3 { transform:none; }
+ .north-image,.north-card-2 .north-image { aspect-ratio:1.23; }
+ .north-caption { padding-top:12px; }
+ .north-caption h3 { font-size:23px; }
+ .journey-section { padding-block:70px; }
+ .journey-track { grid-template-columns:1fr; margin:40px 0 0 8px; border-top:0; border-left:1px solid #a58a584b; }
+ .journey-stop,.journey-stop:not(:first-child) { padding:0 0 35px 28px; border-left:0; }
+ .journey-marker,.journey-stop:not(:first-child) .journey-marker { left:-7px; top:2px; }
+ .journey-stop h3 { font-size:25px; margin-top:12px; }
+ .journey-stop p { max-width:300px; }
+ .philosophy-section { padding:72px 0 80px; }
+ .quote-mark { margin-top:45px; font-size:78px; }
+ .philosophy-inner blockquote { font-size:clamp(29px,8vw,42px); }
+ .philosophy-inner>p { font-size:7px; letter-spacing:.15em; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .saga-art { transform:none!important; }
 }
