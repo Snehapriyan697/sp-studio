@@ -441,3 +441,99 @@
  .saga-hero .hero-bottom { align-items:end; }
  .saga-hero .landscape-label { max-width:140px; text-align:right; line-height:1.7; }
 }
+
+/* ── BEYOND THE HORIZON · complete art direction ── */
+.nordic-site{--ink:#101112;--coal:#191b1d;--paper:#d5c8a9;--gold:#a58a58;--mist:#a9aaa5;--line:#d5c8a926;background:var(--ink);color:#e9e4d8;overflow:hidden}
+.nordic-site *{box-sizing:border-box}
+.nordic-site a{color:inherit;text-decoration:none}
+.nordic-site .skip-link{position:fixed;top:-100px;left:20px;z-index:100;padding:12px 18px;background:var(--paper);color:var(--ink)}
+.nordic-site .skip-link:focus{top:12px}
+.nordic-hero{height:100svh;min-height:720px;max-height:1100px;position:relative;isolation:isolate;overflow:hidden;background:#111619}
+.hero-illustration{object-fit:cover;object-position:center 57%;z-index:-3;animation:hero-arrive 1.7s ease both}
+.hero-grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E");mix-blend-mode:soft-light}
+.nordic-hero:after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#080c10d9 0%,#080c1088 44%,#080c1010 100%),linear-gradient(180deg,#080c1066,transparent 28%,#080c1030 68%,#101112 100%)}
+.nordic-header{height:100px;margin:0 auto;width:min( calc(100% - 112px),1440px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff25}
+.nordic-brand{display:flex;align-items:center;gap:13px;font:500 10px var(--font-heading),serif;letter-spacing:.15em}
+.brand-mark{font:28px var(--font-display),serif;color:var(--gold);border:1px solid #a58a5860;width:42px;height:42px;display:grid;place-items:center}
+.nordic-brand small{display:block;font:8px var(--font-body),sans-serif;color:#b9b5a9;letter-spacing:.2em;margin-top:6px}
+.nordic-header nav{display:flex;gap:36px}
+.nordic-header nav a,.header-index{font:9px var(--font-body),sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#d8d6cd;transition:color .25s}
+.nordic-header nav a:hover,.header-index:hover{color:var(--paper)}
+.header-index{display:flex;align-items:center;gap:9px;color:var(--gold)}
+.hero-copy{width:min(calc(100% - 112px),1440px);margin:0 auto;padding-top:clamp(125px,17vh,205px);position:relative}
+.hero-kicker,.overline{display:flex;align-items:center;gap:12px;color:#c5b58f;font:9px var(--font-body),sans-serif;letter-spacing:.23em}
+.hero-kicker>span:first-child{width:6px;height:6px;background:var(--gold);border-radius:50%;box-shadow:0 0 14px #c9a96a}
+.kicker-line{width:54px;height:1px;background:#c9a96a70}
+.hero-copy h1{font:400 clamp(58px,8.7vw,128px)/.99 var(--font-heading),serif;letter-spacing:-.025em;margin:34px 0 24px;color:#f0eadf;text-shadow:0 5px 35px #0007}
+.hero-copy h1 em,.manifesto h2 em,.world-heading h2 em,.journey-intro h2 em,.belief-content blockquote em,.final-content h2 em{font-family:var(--font-display),serif;font-weight:400;color:#c8b28a}
+.hero-copy>p{font:20px/1.65 var(--font-display),serif;color:#ded9ce}
+.hero-cta{display:inline-flex;align-items:center;gap:32px;margin-top:34px;padding:15px 0;border-bottom:1px solid #c9a96a75;color:#eee5d5;font:9px var(--font-body),sans-serif;letter-spacing:.19em}
+.hero-cta svg,.final-content a svg{transition:transform .25s}
+.hero-cta:hover svg,.final-content a:hover svg{transform:translate(4px,-4px)}
+.hero-bottom{position:absolute;bottom:30px;left:0;right:0;width:min(calc(100% - 112px),1440px);margin:auto;display:flex;justify-content:space-between;align-items:center;color:#b5b2a8;font:8px var(--font-body),sans-serif;letter-spacing:.17em}
+.hero-bottom-center{color:#d5c8a980}
+.hero-bottom a{display:flex;align-items:center;gap:14px}
+.hero-bottom a span{font-size:16px;color:var(--gold)}
+.manifesto{max-width:1280px;width:calc(100% - 112px);margin:auto;padding:135px 0 145px;display:grid;grid-template-columns:.65fr 1.5fr 1fr;gap:42px;align-items:start}
+.manifesto-index{font:8px var(--font-body),sans-serif;letter-spacing:.2em;color:var(--gold);padding-top:10px}
+.manifesto-copy .overline{font-size:8px}
+.manifesto h2{font:400 clamp(42px,5vw,68px)/1.1 var(--font-heading),serif;margin-top:28px}
+.manifesto-aside{align-self:end;padding:0 0 5px 25px;border-left:1px solid var(--line)}
+.manifesto-aside p{font:18px/1.6 var(--font-display),serif;color:#c7c4ba}
+.manifesto-aside span{display:block;margin-top:22px;color:var(--gold);font:8px var(--font-body),sans-serif;letter-spacing:.13em}
+.world-section,.journey-section,.north-principles{padding:100px max(56px,calc((100vw - 1320px)/2)) 125px}
+.world-section{background:#15191b}
+.section-topline{display:flex;justify-content:space-between;gap:18px;border-top:1px solid var(--line);padding-top:15px;color:#b9ae94;font:8px var(--font-body),sans-serif;letter-spacing:.17em}
+.world-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;padding:62px 0 48px}
+.world-heading h2,.journey-intro h2{font:400 clamp(43px,5.6vw,76px)/1.04 var(--font-heading),serif}
+.world-heading p,.journey-intro p{max-width:300px;font:17px/1.65 var(--font-display),serif;color:#b4b3ac}
+.world-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.world-card:nth-child(2){transform:translateY(42px)}
+.world-art{height:clamp(280px,37vw,500px);position:relative;overflow:hidden;background:#20272a}
+.world-art img{object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(.75) brightness(.85)}
+.world-card:hover .world-art img{transform:scale(1.055);filter:saturate(.95) brightness(1)}
+.world-art>span{position:absolute;top:17px;left:18px;color:#eee5d5;font:10px var(--font-heading),serif;letter-spacing:.12em}
+.art-corner{position:absolute;bottom:17px;left:18px;color:#e0d7c5;font:7px var(--font-body),sans-serif;letter-spacing:.2em}
+.world-card-caption{padding:18px 2px 0;display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px}
+.world-card-caption h3{font:26px var(--font-display),serif;font-weight:400}
+.world-card-caption p{grid-column:1;font:12px var(--font-body),sans-serif;color:#989a97}
+.world-card-caption svg{grid-column:2;grid-row:1/3;color:var(--gold)}
+.journey-section{background:#101112}
+.journey-intro{display:flex;justify-content:space-between;align-items:end;gap:40px;padding:60px 0 55px}
+.chapter-list{border-top:1px solid var(--line)}
+.chapter{display:grid;grid-template-columns:70px 1.1fr 1fr 24px;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);transition:padding .3s}
+.chapter:hover{padding-left:12px;padding-right:12px}
+.chapter-number{font:12px var(--font-display),serif;color:var(--gold)}
+.chapter-main>span{font:8px var(--font-body),sans-serif;letter-spacing:.16em;color:#a58a58}
+.chapter-main h3{font:27px var(--font-display),serif;font-weight:400;margin-top:6px}
+.chapter>p{font:13px/1.7 var(--font-body),sans-serif;color:#a6a7a3;max-width:390px}
+.chapter-arrow{color:#a58a58;transition:transform .3s}
+.chapter:hover .chapter-arrow{transform:translate(3px,-3px)}
+.belief-section{position:relative;min-height:710px;display:flex;align-items:center;isolation:isolate;overflow:hidden}
+.belief-art{object-fit:cover;object-position:center 54%;z-index:-3;filter:saturate(.65)}
+.belief-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#0c1115e8,#0c111570 68%,#0c111530),linear-gradient(0deg,#101112 0%,transparent 28%,#10111255 100%)}
+.belief-content{width:min(calc(100% - 112px),1320px);margin:auto;padding:80px 0}
+.belief-content .section-topline{border-color:#ffffff30;color:#e0d2b2}
+.belief-quote-mark{display:block;margin-top:80px;font:120px/.6 var(--font-display),serif;color:#c5a976}
+.belief-content blockquote{font:400 clamp(34px,5.5vw,76px)/1.2 var(--font-display),serif;color:#f0ece4;margin-top:30px;max-width:1100px}
+.belief-content>p{font:8px var(--font-body),sans-serif;letter-spacing:.22em;color:#d0bd98;margin-top:40px}
+.north-principles{background:#171a1b}
+.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;padding-top:75px}
+.principle-grid article{border-left:1px solid #a58a5855;padding-left:24px}
+.principle-grid svg{display:block;color:var(--gold);width:23px;height:23px;stroke-width:1;margin-bottom:34px}
+.principle-grid article>span{font:8px var(--font-body),sans-serif;letter-spacing:.18em;color:#b6a27c}
+.principle-grid h3{font:30px/1.14 var(--font-display),serif;font-weight:400;margin:18px 0 13px}
+.principle-grid p{font:12px/1.8 var(--font-body),sans-serif;color:#a5a7a3;max-width:290px}
+.final-horizon{position:relative;min-height:790px;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate;overflow:hidden}
+.final-art{object-fit:cover;object-position:center 54%;z-index:-3}
+.final-overlay{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#101112c9,#10111225 90%),linear-gradient(0deg,#101112 0%,transparent 27%,#10111233 100%)}
+.final-content{width:min(calc(100% - 112px),1320px);margin:auto;padding:155px 0 130px}
+.final-content h2{font:400 clamp(54px,7.4vw,100px)/1.02 var(--font-heading),serif;margin:30px 0 22px}
+.final-content p{font:20px var(--font-display),serif;color:#d1c9b8}
+.final-content>a{display:inline-flex;align-items:center;gap:24px;margin-top:36px;padding-bottom:12px;border-bottom:1px solid #c5a97680;font:8px var(--font-body),sans-serif;letter-spacing:.2em}
+.nordic-footer{width:min(calc(100% - 112px),1320px);margin:0 auto;padding:25px 0 30px;border-top:1px solid #ffffff30;display:flex;justify-content:space-between;gap:15px;color:#aaa99f;font:8px var(--font-body),sans-serif;letter-spacing:.14em}
+.nordic-footer>a{color:#e3dac8}
+@keyframes hero-arrive{from{transform:scale(1.07);opacity:.5}to{transform:scale(1);opacity:1}}
+@media(max-width:900px){.nordic-header,.hero-copy,.hero-bottom,.belief-content,.final-content,.nordic-footer{width:calc(100% - 56px)}.nordic-header nav{gap:17px}.manifesto{width:calc(100% - 56px);grid-template-columns:.5fr 1.4fr 1fr;gap:22px}.world-section,.journey-section,.north-principles{padding-left:28px;padding-right:28px}.chapter{grid-template-columns:42px 1fr 1fr 20px;gap:14px}.chapter-main h3{font-size:23px}}
+@media(max-width:650px){.nordic-hero{min-height:740px;height:100svh}.nordic-header{height:78px;width:calc(100% - 40px)}.nordic-header nav{display:none}.nordic-brand{font-size:8px}.brand-mark{width:35px;height:35px}.header-index{font-size:8px}.hero-copy{width:calc(100% - 40px);padding-top:clamp(145px,21vh,190px)}.hero-copy h1{font-size:clamp(47px,11vw,72px);margin:28px 0 20px}.hero-copy>p{font-size:17px}.hero-bottom{width:calc(100% - 40px);bottom:20px;font-size:7px}.hero-bottom-center{display:none}.manifesto{width:calc(100% - 40px);padding:80px 0;grid-template-columns:1fr;gap:24px}.manifesto h2{font-size:45px;margin-top:18px}.manifesto-aside{margin-left:3px}.world-section,.journey-section,.north-principles{padding:65px 20px 75px}.section-topline{font-size:7px;letter-spacing:.11em}.section-topline span:last-child{text-align:right}.world-heading,.journey-intro{display:block;padding:42px 0 30px}.world-heading h2,.journey-intro h2{font-size:46px}.world-heading p,.journey-intro p{margin-top:18px;font-size:16px}.world-gallery{grid-template-columns:1fr;gap:35px}.world-card:nth-child(2){transform:none}.world-art{height:370px}.world-card-caption h3{font-size:25px}.chapter{grid-template-columns:32px 1fr 20px;gap:10px;padding:22px 0}.chapter>p{grid-column:2/4;grid-row:2;font-size:12px}.chapter-arrow{grid-column:3;grid-row:1}.chapter-main h3{font-size:23px}.belief-section{min-height:620px}.belief-content{width:calc(100% - 40px);padding:60px 0}.belief-quote-mark{font-size:90px;margin-top:65px}.belief-content blockquote{font-size:37px}.belief-content>p{font-size:7px;letter-spacing:.13em;line-height:2}.principle-grid{grid-template-columns:1fr;gap:38px;padding-top:48px}.principle-grid article{padding-left:20px}.principle-grid svg{margin-bottom:20px}.principle-grid h3{font-size:27px}.final-horizon{min-height:700px}.final-content{width:calc(100% - 40px);padding:130px 0 100px}.final-content h2{font-size:57px}.final-content p{font-size:17px}.nordic-footer{width:calc(100% - 40px);flex-wrap:wrap;line-height:1.7}.nordic-footer span:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.nordic-site *, .nordic-site *:before,.nordic-site *:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
