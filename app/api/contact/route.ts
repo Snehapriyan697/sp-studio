@@ -10,7 +10,13 @@ export async function POST(request: Request) {
   if (Number(request.headers.get('content-length') || 0) > 8000) return reply('Message is too large.', 413)
 
   let body: Record<string, unknown>
-  try { body = await request.json() } catch { return reply('Please send a valid message.', 400) }
+  try {
+    const rawBody = await request.text()
+    if (rawBody.length > 8000) return reply('Message is too large.', 413)
+    const parsed: unknown = JSON.parse(rawBody)
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return reply('Please send a valid message.', 400)
+    body = parsed as Record<string, unknown>
+  } catch { return reply('Please send a valid message.', 400) }
   if (typeof body.website === 'string' && body.website.trim()) return reply('Thanks — your message was received.', 200)
 
   const name = typeof body.name === 'string' ? body.name.trim() : ''
