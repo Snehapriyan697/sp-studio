@@ -34,6 +34,58 @@ export function SelectedWork() {
   )
 }
 
+
+export function TheNorth() {
+  const places = [
+    { name: 'The quiet forest', detail: 'Where old pines hold the stories of passing winters.', image: '/images/little-world.png', alt: 'A secluded miniature evergreen forest' },
+    { name: 'The northern shore', detail: 'Where the tide redraws the edge of the known world.', image: '/images/northern-shore.png', alt: 'A quiet northern coastline at dusk' },
+    { name: 'A light in the wild', detail: 'A shelter, a fire, and a moment to find your bearings.', image: '/images/quiet-studio.png', alt: 'A warmly lit cabin in a forest' },
+  ]
+  return (
+    <section id="north" className="north-section">
+      <div className="page-width north-intro"><SectionLabel number="01">The world</SectionLabel><h2>A land of <em>long silence.</em></h2><p>Beyond the familiar roads, the world opens into forests, cold water, and places that ask nothing of you but attention.</p></div>
+      <div className="north-grid page-width">
+        {places.map((place, index) => <article className={`north-card north-card-${index + 1}`} key={place.name}>
+          <div className="north-image"><Image src={place.image} alt={place.alt} fill sizes="(max-width: 700px) 88vw, 33vw" /><span className="north-index">0{index + 1}</span></div>
+          <div className="north-caption"><h3>{place.name}</h3><p>{place.detail}</p></div>
+        </article>)}
+      </div>
+    </section>
+  )
+}
+
+export function Journey() {
+  const chapters = [
+    { time: 'I · THE DEPARTURE', title: 'Leave the familiar', text: 'Every horizon begins as a line we have not yet crossed.' },
+    { time: 'II · THE CROSSING', title: 'Learn the weather', text: 'The sea does not promise calm. It teaches us how to keep going.' },
+    { time: 'III · THE STILLNESS', title: 'Listen more closely', text: 'Some answers arrive only when the noise of winning finally fades.' },
+    { time: 'IV · THE HORIZON', title: 'Choose what comes next', text: 'The destination matters less when the journey changes who you are.' },
+  ]
+  return (
+    <section id="journey" className="journey-section page-width">
+      <SectionLabel number="02">The journey</SectionLabel>
+      <div className="section-heading"><h2>Not all who wander<br />seek <em>to conquer.</em></h2><p>A passage in four quiet chapters.<br />Move through it at your own pace.</p></div>
+      <div className="journey-track">{chapters.map((chapter, index) => <article className="journey-stop" key={chapter.time}>
+        <span className="journey-marker">{String(index + 1).padStart(2, '0')}</span><span className="journey-time">{chapter.time}</span><h3>{chapter.title}</h3><p>{chapter.text}</p>
+      </article>)}</div>
+    </section>
+  )
+}
+
+export function Philosophy() {
+  return (
+    <section id="philosophy" className="philosophy-section">
+      <div className="philosophy-grain" />
+      <div className="page-width philosophy-inner"><SectionLabel number="03">The philosophy</SectionLabel>
+        <span className="quote-mark" aria-hidden="true">“</span>
+        <blockquote>I have no enemies.<br /><em>The hardest battle is the one within.</em></blockquote>
+        <p>PEACE · FREEDOM · PURPOSE · HUMANITY</p>
+        <span className="philosophy-footnote">An original reflection on choosing a gentler way forward.</span>
+      </div>
+    </section>
+  )
+}
+
 export function About() {
   return (
     <section id="about" className="about-section section-shell page-width" aria-labelledby="about-heading">
