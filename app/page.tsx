@@ -1,5 +1,5 @@
 import { Hero } from '@/components/portfolio/hero'
-import { Introduction, SelectedWork, About, Contact } from '@/components/portfolio/sections'
+import { Introduction, SelectedWork, About, Contact, Journey, Philosophy, TheNorth } from '@/components/portfolio/sections'
 import { Lab } from '@/components/portfolio/lab'
 import { LittleWorld } from '@/components/portfolio/little-world'
 
@@ -10,7 +10,10 @@ export default function Home() {
       <Hero />
       <main id="main-content">
         <Introduction />
+        <TheNorth />
         <SelectedWork />
+        <Journey />
+        <Philosophy />
         <Lab />
         <LittleWorld />
         <About />
