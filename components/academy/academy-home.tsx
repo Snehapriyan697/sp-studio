@@ -121,7 +121,7 @@ export default function AcademyHome() {
             {trackQuests.map((q, i) => {
               const done = completed.includes(q.id)
               const locked = i > 0 && !completed.includes(trackQuests[i - 1].id)
-              return <div key={q.id} className="cb-quest-wrap">{i % 3 === 0 && <div className="cb-tier-label">{['FOUNDATION / START FROM ZERO', 'CORE SKILLS / THINK IN CODE', 'BUILDER / DESIGN SYSTEMS', 'ADVANCED / THINK LIKE AN ENGINEER'][Math.floor(i / 3)] || 'CAPSTONE / SHIP YOUR WORK'}</div>}<button className={`cb-quest-item ${active.id === q.id ? 'active' : ''} ${done ? 'done' : ''}`} onClick={() => !locked && chooseQuest(q)} disabled={locked}>
+              return <div key={q.id} className="cb-quest-wrap">{(i % 3 === 0 || i === 11) && <div className="cb-tier-label">{i === 11 ? 'CAPSTONE / SHIP YOUR WORK' : ['FOUNDATION / START FROM ZERO', 'CORE SKILLS / THINK IN CODE', 'BUILDER / DESIGN SYSTEMS', 'ADVANCED / THINK LIKE AN ENGINEER'][Math.floor(i / 3)]}</div>}<button className={`cb-quest-item ${active.id === q.id ? 'active' : ''} ${done ? 'done' : ''}`} onClick={() => !locked && chooseQuest(q)} disabled={locked}>
                 <span className="cb-quest-number">{done ? <Check size={14} /> : locked ? <LockKeyhole size={13} /> : q.chapter}</span><span className="cb-quest-name"><b>{q.title}</b><small>{q.subtitle}</small></span><span className="cb-quest-xp">{done ? 'CLEAR' : q.xp + ' XP'}</span>
               </button></div>
             })}
