@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'Snehapriyan',
     images: [{ url: '/images/northern-shore.png', width: 1536, height: 1024, alt: 'A quiet northern coastline and a warmly lit cabin' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Snehapriyan — AI, code, and curiosity.', images: ['/images/northern-shore.png'] },
+  twitter: { card: 'summary_large_image', title: 'Beyond the Horizon — A Journey North', description: 'Some journeys are not about conquest. They are about discovering who we truly are.', images: ['/images/northern-shore.png'] },
   icons: { icon: '/icon.svg' },
 }
 
