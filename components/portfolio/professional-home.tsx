@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import { ArrowDownRight, ArrowUpRight, Asterisk, Braces, Cpu, Layers3, Mail, Sparkles } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, Asterisk, Braces, Layers3, Sparkles } from 'lucide-react'
 
 const HeroScene = dynamic(() => import('@/components/portfolio/hero-scene'), {
   ssr: false,
