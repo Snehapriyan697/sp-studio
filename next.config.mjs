@@ -5,12 +5,35 @@ const nextConfig = {
     qualities: [75, 85],
   },
   async headers() {
-    return [{ source: '/(.*)', headers: [
-      { key: 'X-Content-Type-Options', value: 'nosniff' },
-      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-      { key: 'Strict-Transport-Security', value: 'max-age=63072000' },
-      { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
-    ] }]
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "frame-ancestors 'none'",
+              "object-src 'none'",
+              "script-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: blob: https://images.unsplash.com",
+              "font-src 'self' data:",
+              "connect-src 'self' https://vitals.vercel-insights.com",
+              "frame-src 'none'",
+              "upgrade-insecure-requests",
+            ].join('; '),
+          },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
+      },
+    ]
   },
 }
 
